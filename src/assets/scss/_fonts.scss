@@ -1,0 +1,68 @@
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+$font-family: Roboto, sans-serif;
+
+/* Thin */
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: $font-weight-thin;
+  font-display: swap;
+  src: url("../fonts/roboto/Roboto-Thin.woff2") format("woff2"),
+    url("../fonts/roboto/Roboto-Thin.ttf") format("truetype");
+}
+
+/* Light */
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: $font-weight-light;
+  font-display: swap;
+  src: url("../fonts/roboto/Roboto-Light.woff2") format("woff2"),
+    url("../fonts/roboto/Roboto-Light.ttf") format("truetype");
+}
+
+/* Regular/Normal */
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: $font-weight-regular;
+  font-display: swap;
+  src: url("../fonts/roboto/Roboto-Regular.woff2") format("woff2"),
+    url("../fonts/roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+/* Medium */
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  font-display: swap;
+  src: url("../fonts/roboto/Roboto-Medium.woff2") format("woff2"),
+    url("../fonts/roboto/Roboto-Medium.ttf") format("truetype");
+}
+
+/* Bold */
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: $font-weight-bold;
+  font-display: swap;
+  src: url("../fonts/roboto/Roboto-Bold.woff2") format("woff2"),
+    url("../fonts/roboto/Roboto-Bold.ttf") format("truetype");
+}
+
+/* Black */
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: $font-weight-black;
+  font-display: swap;
+  src: url("../fonts/roboto/Roboto-Black.woff2") format("woff2"),
+    url("../fonts/roboto/Roboto-Black.ttf") format("truetype");
+}

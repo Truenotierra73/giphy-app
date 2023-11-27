@@ -1,1 +1,65 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+@use './assets/scss/fonts';
+@use './assets/scss/colors';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+//$giphy-primary: mat.define-palette(mat.$indigo-palette);
+//$giphy-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$giphy-primary: mat.define-palette(colors.$turbo-palette);
+$giphy-accent: mat.define-palette(colors.$magenta-palette);
+
+// The warn palette is optional (defaults to red).
+$giphy-warn: mat.define-palette(mat.$red-palette);
+
+// Typography
+$roboto-typography-config: mat.define-rem-typography-config(
+  $headline-1: mat.define-typography-level(6rem, 6rem, fonts.$font-weight-light, fonts.$font-family, -0.09375rem),
+  $headline-2: mat.define-typography-level(3.75rem, 3.75rem, fonts.$font-weight-light, fonts.$font-family, -0.03125rem),
+  $headline-3: mat.define-typography-level(3rem, 3rem, fonts.$font-weight-regular, fonts.$font-family, 0rem),
+  $headline-4: mat.define-typography-level(2.125rem, 2.125rem, fonts.$font-weight-regular, fonts.$font-family, 0.015625rem),
+  $headline-5: mat.define-typography-level(1.5rem, 1.5rem, fonts.$font-weight-regular, fonts.$font-family, 0rem),
+  $headline-6: mat.define-typography-level(1.25rem, 1.25rem, fonts.$font-weight-medium, fonts.$font-family, 0.009375rem),
+  $subtitle-1: mat.define-typography-level(1rem, 1rem, fonts.$font-weight-regular, fonts.$font-family, 0.009375rem),
+  $subtitle-2: mat.define-typography-level(0.875rem, 0.875rem, fonts.$font-weight-medium, fonts.$font-family, 0.00625rem),
+  $body-1: mat.define-typography-level(1rem, 1rem, fonts.$font-weight-regular, fonts.$font-family, 0.03125rem),
+  $body-2: mat.define-typography-level(0.875rem, 0.875rem, fonts.$font-weight-regular, fonts.$font-family, 0.015625rem),
+  $button: mat.define-typography-level(0.875rem, 0.875rem, fonts.$font-weight-medium, fonts.$font-family, 0.078125rem),
+  $caption: mat.define-typography-level(0.75rem, 0.75rem, fonts.$font-weight-regular, fonts.$font-family, 0.025rem),
+  $overline: mat.define-typography-level(0.625rem, 0.625rem, fonts.$font-weight-regular, fonts.$font-family, 0.09375rem),
+);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$giphy-theme: mat.define-light-theme((
+  color: (
+    primary: $giphy-primary,
+    accent: $giphy-accent,
+    warn: $giphy-warn,
+  ),
+  typography: $roboto-typography-config
+));
+
+//https://angular-material.dev/courses/m2-ng-components/m2-ng-components/modify-typography
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($giphy-theme);
+@include mat.typography-hierarchy($roboto-typography-config);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: fonts.$font-family, "Helvetica Neue", sans-serif; }
